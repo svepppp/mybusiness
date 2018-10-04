@@ -14,6 +14,7 @@
         <spring.version>4.3.19.RELEASE</spring.version>
        <javax.version>3.0.1</javax.version>
        <jstl.version> 1.2</jstl.version>
+       <postgresql.version>42.2.4</postgresql.version>
     </properties>
 
  <dependencies>
@@ -49,7 +50,19 @@
         <version>${jstl.version}</version>
     </dependency>
 
-</dependencies>
+     <!-- Postgresql driver -->
+     <dependency>
+         <groupId>org.postgresql</groupId>
+         <artifactId>postgresql</artifactId>
+         <version>${postgresql.version}</version>
+     </dependency>
+     <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-jdbc</artifactId>
+         <version>4.3.11.RELEASE</version>
+     </dependency>
+
+ </dependencies>
 
     <build>
         <finalName>mybusiness</finalName>
