@@ -13,18 +13,20 @@ public class CreateTable {
 
     public String getTableCreationStatus() {
         try {
-//            jdbcTemplate.execute("DROP TABLE IF EXISTS cats");
+            jdbcTemplate.execute("DROP TABLE IF EXISTS dogs");
 
-            jdbcTemplate.execute("CREATE TABLE public.cats\n" +
+
+            jdbcTemplate.execute("CREATE TABLE public.dogs\n" +
                     "(\n" +
                     "    id integer NOT NULL,\n" +
                     "    name character varying(255) COLLATE pg_catalog.\"default\",\n" +
                     "    description character varying(255) COLLATE pg_catalog.\"default\",\n" +
                     "    color_id integer,\n" +
-                    "    CONSTRAINT cats_pkey PRIMARY KEY (id)\n" +
+                    "    CONSTRAINT dogs_pkey PRIMARY KEY (id)\n" +
                     ")");
 
-            return "table created";
+            jdbcTemplate.execute("select c.name from cats c where c.color_id=(select id from colors cl where cl.name='grey')");
+            return "table created and request completed";
         } catch (Exception e) {
             return "Table creation failed " + e;
         }

@@ -20,6 +20,7 @@ public class AppController {
     //3. @Qualifier("main")
     private MyService myService;
 
+
     @Autowired
     private CreateTable createTable;
 
@@ -37,6 +38,7 @@ public class AppController {
         //1.  model.addAttribute("name", word.getName());
           return "home";
       }*/
+
 // localhost:8080/
     @RequestMapping("/")
     public String getHomePage(Model model) {
@@ -50,6 +52,7 @@ public class AppController {
         model.addAttribute("name", name);
         return "hello";
     }
+
 
     @RequestMapping("/create")
     public String createTable(Model model) {
