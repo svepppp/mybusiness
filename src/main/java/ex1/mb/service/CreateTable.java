@@ -12,8 +12,8 @@ public class CreateTable {
     }
 
     public String getTableCreationStatus() {
-        try {
-            jdbcTemplate.execute("DROP TABLE IF EXISTS dogs");
+      try {
+          /*  jdbcTemplate.execute("DROP TABLE IF EXISTS dogs");
 
 
             jdbcTemplate.execute("CREATE TABLE public.dogs\n" +
@@ -24,8 +24,10 @@ public class CreateTable {
                     "    color_id integer,\n" +
                     "    CONSTRAINT dogs_pkey PRIMARY KEY (id)\n" +
                     ")");
+*/
 
-            jdbcTemplate.execute("select c.name from cats c where c.color_id=(select id from colors cl where cl.name='grey')");
+
+    //        jdbcTemplate.execute("select b.name from bees c where c.color_id=(select id from colors cl where cl.name='grey')");
             return "table created and request completed";
         } catch (Exception e) {
             return "Table creation failed " + e;
