@@ -45,8 +45,8 @@ public class AppConfig {
     public UserDetailsService userDetailsService(){
         JdbcDaoImpl jdbcDao=new JdbcDaoImpl();
         jdbcDao.setDataSource(dataSource());    // из  jdbcTemplate()
-        jdbcDao.setUsersByUsernameQuery();   //пользователь и пароль
-        jdbcDao.setAuthoritiesByUsernameQuery(); //роль данного пользователя
+        jdbcDao.setUsersByUsernameQuery(environment.getRequiredProperty("usersByQuery"));   //пользователь и пароль
+        jdbcDao.setAuthoritiesByUsernameQuery(environment.getRequiredProperty("rolesByQuery")); //роль данного пользователя
         return jdbcDao;
     }
 
