@@ -4,6 +4,7 @@ import ex1.mb.service.CreateTable;
 import ex1.mb.service.MyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -55,6 +56,7 @@ public class AppController {
 
 
     @RequestMapping("/create")
+    @Secured("ROLE_ADMIN")
     public String createTable(Model model) {
         model.addAttribute("status", createTable.getTableCreationStatus());
         return "create";

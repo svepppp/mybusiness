@@ -9,10 +9,12 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 
 @Configuration
 @PropertySource(value = "classpath:util.properties")
-
+@PropertySource(value = "classpath:auth.properties")
 public class AppConfig {
     @Autowired
     private Environment environment;
@@ -38,6 +40,17 @@ public class AppConfig {
         jdbcTemplate.setDataSource(dataSource());
         return jdbcTemplate;
     }
+
+    @Bean
+    public UserDetailsService userDetailsService(){
+        JdbcDaoImpl jdbcDao=new JdbcDaoImpl();
+        jdbcDao.setDataSource(dataSource());    // из  jdbcTemplate()
+        jdbcDao.setUsersByUsernameQuery();   //пользователь и пароль
+        jdbcDao.setAuthoritiesByUsernameQuery(); //роль данного пользователя
+        return jdbcDao;
+    }
+
+
 
     @Bean
     public CreateTable createTable() {
