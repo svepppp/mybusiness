@@ -1,6 +1,7 @@
 package ex1.mb.entity;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name="cats")
@@ -11,8 +12,21 @@ public class Cat {
     @Column(name="cat_id")
     private long id;
 
+    @Column(columnDefinition="DATE")
+    private LocalDate year;
+
+    public void setYear(LocalDate year) {
+        this.year = year;
+    }
+
+    public LocalDate getYear() {
+        return year;
+    }
+
     private String name;
     private String description;
+
+
 
     public void setId(long id) {
         this.id = id;
