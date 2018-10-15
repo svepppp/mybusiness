@@ -1,6 +1,8 @@
 package ex1.mb.config;
 
-import ex1.mb.controller.Message;
+import ex1.mb.dao.CatDao;
+import ex1.mb.dao.impl.CatDaoImpl;
+import ex1.mb.entity.Cat;
 import ex1.mb.service.CreateTable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -20,19 +22,19 @@ public class AppConfig {
     private Environment environment;
 
 
-  /*  @Bean
-    public Message message(){
-        return  new Message("Bean from annonation");
-    }*/
-  @Bean
-  public DriverManagerDataSource dataSource() {
-      DriverManagerDataSource dataSource = new DriverManagerDataSource();
-      dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.postgresql.driver"));
-      dataSource.setUrl(environment.getRequiredProperty("jdbc.postgresql.url"));
-      dataSource.setUsername(environment.getRequiredProperty("jdbc.postgresql.user"));
-      dataSource.setPassword(environment.getRequiredProperty("jdbc.postgresql.password"));
-      return dataSource;
-  }
+    /*  @Bean
+      public Message message(){
+          return  new Message("Bean from annonation");
+      }*/
+    @Bean
+    public DriverManagerDataSource dataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.postgresql.driver"));
+        dataSource.setUrl(environment.getRequiredProperty("jdbc.postgresql.url"));
+        dataSource.setUsername(environment.getRequiredProperty("jdbc.postgresql.user"));
+        dataSource.setPassword(environment.getRequiredProperty("jdbc.postgresql.password"));
+        return dataSource;
+    }
 
     @Bean
     public JdbcTemplate jdbcTemplate() {
@@ -41,19 +43,24 @@ public class AppConfig {
         return jdbcTemplate;
     }
 
-    @Bean
-    public UserDetailsService userDetailsService(){
-        JdbcDaoImpl jdbcDao=new JdbcDaoImpl();
-        jdbcDao.setDataSource(dataSource());    // из  jdbcTemplate()
-        jdbcDao.setUsersByUsernameQuery(environment.getRequiredProperty("usersByQuery"));   //пользователь и пароль
-        jdbcDao.setAuthoritiesByUsernameQuery(environment.getRequiredProperty("rolesByQuery")); //роль данного пользователя
-        return jdbcDao;
-    }
-
-
 
     @Bean
     public CreateTable createTable() {
         return new CreateTable(jdbcTemplate());
+    }
+
+    @Bean
+    public UserDetailsService userDetailsService() {
+        JdbcDaoImpl jdbcDao = new JdbcDaoImpl();
+        jdbcDao.setDataSource(dataSource());
+        jdbcDao.setUsersByUsernameQuery(environment.getRequiredProperty("usersByQuery"));
+        jdbcDao.setAuthoritiesByUsernameQuery(environment.getRequiredProperty("rolesByQuery"));
+        return jdbcDao;
+    }
+
+
+    @Bean
+    public CatDao catDao() {
+        return new CatDaoImpl(Cat.class);
     }
 }

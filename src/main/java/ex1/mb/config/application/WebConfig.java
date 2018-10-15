@@ -23,7 +23,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     }
 
 
-    @Override
+   @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/views/css");
     }
