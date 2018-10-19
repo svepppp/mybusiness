@@ -20,7 +20,7 @@ public class CatController {
     @ResponseBody
     @RequestMapping(value = "/add", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
        public Cat addCat(@RequestBody Cat cat){    //кастим к Cat
-        catService.addCat(cat);
+         catService.addCat(cat);
         return cat;
     }
 
