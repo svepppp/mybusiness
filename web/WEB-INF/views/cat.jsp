@@ -138,8 +138,9 @@
                 description: <input id="postDescription" value="default description">
                 name: <input id="postName" value="default name">
                 year: <input id="postYear" value="default year">
+                time: <input id="postTime" value="default time">
 
-                <button type="button" onclick="RestPost($('#postDescription').val(),$('#postName').val(),$('#postYear').val())">try</button>
+                <button type="button" onclick="RestPost($('#postDescription').val(),$('#postName').val(),$('#postYear').val(),$('#postTime').val())">try</button>
             </form>
         </td>
     </tr>
@@ -153,8 +154,8 @@
                 description: <input id="putDescription" value="default description">
                 name: <input id="putName" value="default name">
                 year: <input id="putYear" value="default year">
-
-                <button type="button" onclick="RestPut($('#inputId').val(),$('#putDescription').val(),$('#putName').val(),$('#putYear').val())">try</button>
+                time: <input id="putTime" value="default time">
+                <button type="button" onclick="RestPut($('#inputId').val(),$('#putDescription').val(),$('#putName').val(),$('#putYear').val(),$('#putTime').val())">try</button>
             </form>
         </td>
     </tr>
