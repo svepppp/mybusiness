@@ -1,6 +1,7 @@
 package ex1.mb.controller;
 
 import ex1.mb.entity.Cat;
+import ex1.mb.entity.CatWoman;
 import org.junit.Test;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
@@ -8,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -133,6 +135,19 @@ public class CatControllerIntegrationTest {
         cat.setDescription("funny");
         cat.setTime(LocalTime.of(10, 11, 34));
         cat.setYear(LocalDate.of(2012, 11, 12));
+
+        CatWoman liska=new CatWoman();
+        CatWoman riska=new CatWoman();
+
+        liska.setName("Liska");
+        riska.setName("Riska");
+        liska.setDescription("funny");
+        riska.setDescription("happy");
+
+        List<CatWoman> catWomenList=new ArrayList<>();
+        catWomenList.add(liska);
+        catWomenList.add(riska);
+        cat.setCatWomenList(catWomenList);
         return cat;
     }
 
@@ -143,6 +158,19 @@ public class CatControllerIntegrationTest {
         cat.setDescription("happy");
         cat.setTime(LocalTime.of(11, 12, 35));
         cat.setYear(LocalDate.of(2013, 3, 5));
+
+        CatWoman liska=new CatWoman();
+        CatWoman riska=new CatWoman();
+
+        liska.setName("Liska");
+        riska.setName("Riska");
+        liska.setDescription("funny");
+        riska.setDescription("happy");
+
+        List<CatWoman> catWomenList=new ArrayList<>();
+        catWomenList.add(liska);
+        catWomenList.add(riska);
+        cat.setCatWomenList(catWomenList);
         return cat;
     }
 }
