@@ -7,8 +7,6 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -131,16 +129,7 @@ public class CarControllerIntegrationTest {
     private Car prefillCar() {
         Car car = new Car();
         car.setName("Volvo");
-
-        Employee ivanov=new Employee();
-        Employee petrov=new Employee();
-
-        ivanov.setName("Ivanov");
-        petrov.setName("Petrov");
-
-        List<Employee> employeeList=new ArrayList<>();
-        employeeList.add(ivanov);
-        employeeList.add(petrov);
+        List<Employee> employeeList = prefillEmployeeList("Volvo");
         car.setEmployeeList(employeeList);
         return car;
     }
@@ -149,16 +138,36 @@ public class CarControllerIntegrationTest {
         Car car = new Car();
         car.setId(id);
         car.setName("Fiat");
-        Employee sidorov=new Employee();
-        Employee serov=new Employee();
-
-        sidorov.setName("Sidorov");
-        serov.setName("Serov");
-
-        List<Employee> employeeList=new ArrayList<>();
-        employeeList.add(sidorov);
-        employeeList.add(serov);
+        List<Employee> employeeList = prefillEmployeeList("Fiat");
         car.setEmployeeList(employeeList);
         return car;
+    }
+
+    private List<Employee> prefillEmployeeList(String carName) {
+        Employee ivanov = new Employee();
+        Employee petrov = new Employee();
+        ivanov.setName("Ivanov");
+        ivanov.setCarList(prefillCarList("Ivanov"));
+        petrov.setName("Petrov");
+        petrov.setCarList(prefillCarList("Petrov"));
+        List<Employee> employeeList = new ArrayList<>();
+        employeeList.add(ivanov);
+        employeeList.add(petrov);
+        return employeeList;
+
+    }
+
+    private List<Car> prefillCarList(String employeeName) {
+        Car volvo = new Car();
+        Car fiat = new Car();
+
+        volvo.setName("Volvo");
+        fiat.setName("Fiat");
+        volvo.setEmployeeList(prefillEmployeeList("Volvo"));
+        fiat.setEmployeeList(prefillEmployeeList("Fiat"));
+        List<Car> carList = new ArrayList<>();
+        carList.add(volvo);
+        carList.add(fiat);
+        return carList;
     }
 }

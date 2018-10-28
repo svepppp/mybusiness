@@ -11,30 +11,29 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
     private String name;
 
-    @ManyToMany(cascade = CascadeType.ALL,fetch =FetchType.EAGER)
-    List<Employee> employeeList=new ArrayList<>();
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    List<Employee> employeeList = new ArrayList<>();
 
     public long getId() {
         return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public List<Employee> getEmployeeList() {
-        return employeeList;
     }
 
     public void setId(long id) {
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Employee> getEmployeeList() {
+        return employeeList;
     }
 
     public void setEmployeeList(List<Employee> employeeList) {
