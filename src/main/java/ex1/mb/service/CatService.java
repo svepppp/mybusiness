@@ -23,7 +23,7 @@ public interface CatService {
         Cat getCatById(long id);
 
         /**
-         * method gor getting all cats
+         * method for getting all cats
          *
          * @return all cats
          */

@@ -1,8 +1,12 @@
 package ex1.mb.config;
 
 import ex1.mb.dao.CatDao;
+import ex1.mb.dao.impl.CarDaoImpl;
 import ex1.mb.dao.impl.CatDaoImpl;
+import ex1.mb.dao.impl.EmployeeDaoImpl;
+import ex1.mb.entity.Car;
 import ex1.mb.entity.Cat;
+import ex1.mb.entity.Employee;
 import ex1.mb.service.CreateTable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -62,5 +66,15 @@ public class AppConfig {
     @Bean
     public CatDao catDao() {
         return new CatDaoImpl(Cat.class);
+    }
+
+    @Bean
+    public CarDaoImpl carDao() {
+        return new CarDaoImpl(Car.class);
+    }
+
+    @Bean
+    public EmployeeDaoImpl employeeDao() {
+        return new EmployeeDaoImpl(Employee.class);
     }
 }
