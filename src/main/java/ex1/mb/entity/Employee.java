@@ -14,9 +14,8 @@ public class Employee {
 
     private String name;
 
-
-    @ManyToMany( fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-      private List<Car> carList = new ArrayList<>();
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Car> carList = new ArrayList<>();
 
     public Long getId() {
         return id;
