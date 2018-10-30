@@ -10,17 +10,18 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
     private String name;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    List<Employee> employeeList = new ArrayList<>();
+    // @JsonIgnore
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "carList")
+    private List<Employee> employeeList = new ArrayList<>();
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

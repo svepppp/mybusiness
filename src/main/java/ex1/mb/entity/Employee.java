@@ -5,36 +5,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="employees")
+@Table(name = "employees")
 public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     private String name;
 
-    @ManyToMany(cascade = CascadeType.ALL,fetch =FetchType.EAGER)
-    private List<Car> carList=new ArrayList<>();
 
-    public long getId() {
+    @ManyToMany( fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+      private List<Car> carList = new ArrayList<>();
+
+    public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public List<Car> getCarList() {
-        return carList;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Car> getCarList() {
+        return carList;
     }
 
     public void setCarList(List<Car> carList) {
