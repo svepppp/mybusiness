@@ -147,6 +147,7 @@ public class CatControllerIntegrationTest {
         List<CatWoman> catWomenList=new ArrayList<>();
         catWomenList.add(liska);
         catWomenList.add(riska);
+
         cat.setCatWomenList(catWomenList);
         return cat;
     }
@@ -170,6 +171,7 @@ public class CatControllerIntegrationTest {
         List<CatWoman> catWomenList=new ArrayList<>();
         catWomenList.add(liska);
         catWomenList.add(riska);
+
         cat.setCatWomenList(catWomenList);
         return cat;
     }

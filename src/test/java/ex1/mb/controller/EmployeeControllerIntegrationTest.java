@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class EmployeeControllerIntegrationTest {
-    private final static String ROOT = "http://localhost:8080/Employee";
+    private final static String ROOT = "http://localhost:8080/employee";
     private final static String ADD = "/add";
     private final static String GET_BY_ID = "/get";
     private static final String ALL = "/all";
@@ -74,7 +74,6 @@ public class EmployeeControllerIntegrationTest {
         assertEquals(1, employees1.size() - employees2.size());
     }
 
-
     @Test
     public void updateEmployee() {
         Employee employee = createdEmployee();
@@ -97,7 +96,6 @@ public class EmployeeControllerIntegrationTest {
         assertNotNull(updatedEmployee);
         assertEquals(employee.getId(), updatedEmployee.getId());
     }
-
 
     private ResponseEntity<List<Employee>> getListResponseEntity(RestTemplate restTemplate) {
         return restTemplate.exchange(
@@ -140,6 +138,7 @@ public class EmployeeControllerIntegrationTest {
         List<Car> carList = new ArrayList<>();
         carList.add(volvo);
         carList.add(fiat);
+
         employee.setCarList(carList);
         return employee;
     }
@@ -157,36 +156,8 @@ public class EmployeeControllerIntegrationTest {
         List<Car> carList = new ArrayList<>();
         carList.add(volvo);
         carList.add(fiat);
+
         employee.setCarList(carList);
         return employee;
     }
-
-   /* private List<Employee> prefillEmployeeList1() {
-        Employee ivanov = new Employee();
-        Employee petrov = new Employee();
-
-        ivanov.setName("Ivanov");
-        ivanov.setCarList(prefillCarList1());
-        petrov.setName("Petrov");
-        petrov.setCarList(prefillCarList1());
-        List<Employee> employeeList = new ArrayList<>();
-        employeeList.add(ivanov);
-        employeeList.add(petrov);
-        return employeeList;
-
-    }
-
-    private List<Car> prefillCarList1() {
-        Car volvo = new Car();
-        Car fiat = new Car();
-
-        volvo.setName("Volvo");
-        fiat.setName("Fiat");
-   *//*volvo.setEmployeeList(prefillEmployeeList1());
-        fiat.setEmployeeList(prefillEmployeeList1());*//*
-        List<Car> carList = new ArrayList<>();
-        carList.add(volvo);
-        carList.add(fiat);
-        return carList;
-    }*/
-}
+ }
