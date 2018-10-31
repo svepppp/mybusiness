@@ -1,7 +1,5 @@
 package ex1.mb.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +13,7 @@ public class Car {
     private Long id;
     private String name;
 
-   @JsonIgnore
+    // @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "carList")
     private List<Employee> employeeList = new ArrayList<>();
 
