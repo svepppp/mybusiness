@@ -1,5 +1,6 @@
 package ex1.mb.controller;
 
+import ex1.mb.dto.EmployeeDto;
 import ex1.mb.entity.Car;
 import ex1.mb.entity.Employee;
 import org.junit.Test;
@@ -26,11 +27,11 @@ public class EmployeeControllerIntegrationTest {
         Employee employee = createdEmployee();
 
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<Employee> responseEntity = restTemplate.exchange(
+        ResponseEntity<EmployeeDto> responseEntity = restTemplate.exchange(
                 ROOT + GET_BY_ID + "/{id}",
                 HttpMethod.GET,
                 null,
-                Employee.class,
+                EmployeeDto.class,
                 employee.getId()
         );
 
@@ -44,10 +45,10 @@ public class EmployeeControllerIntegrationTest {
         createdEmployee();
 
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<List<Employee>> responseEntity = getListResponseEntity(restTemplate);
-        List<Employee> employees = responseEntity.getBody();
+        ResponseEntity<List<EmployeeDto>> responseEntity = getListResponseEntity(restTemplate);
+        List<EmployeeDto> employees = responseEntity.getBody();
 
-        for (Employee employee : employees) {
+        for (EmployeeDto employee : employees) {
             assertNotNull(employee);
         }
     }
@@ -58,17 +59,17 @@ public class EmployeeControllerIntegrationTest {
         Employee employee = createdEmployee();
 
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<List<Employee>> responseEntity1 = getListResponseEntity(restTemplate);
-        List<Employee> employees1 = responseEntity1.getBody();
-        ResponseEntity<Employee> responseEntity = restTemplate.exchange(
+        ResponseEntity<List<EmployeeDto>> responseEntity1 = getListResponseEntity(restTemplate);
+        List<EmployeeDto> employees1 = responseEntity1.getBody();
+        ResponseEntity<EmployeeDto> responseEntity = restTemplate.exchange(
                 ROOT + DELETE + "/{id}",
                 HttpMethod.DELETE,
                 null,
-                Employee.class,
+                EmployeeDto.class,
                 employee.getId()
         );
-        ResponseEntity<List<Employee>> responseEntity2 = getListResponseEntity(restTemplate);
-        List<Employee> employees2 = responseEntity2.getBody();
+        ResponseEntity<List<EmployeeDto>> responseEntity2 = getListResponseEntity(restTemplate);
+        List<EmployeeDto> employees2 = responseEntity2.getBody();
 
         assertEquals("OK", responseEntity.getStatusCode().getReasonPhrase());
         assertEquals(1, employees1.size() - employees2.size());
@@ -97,13 +98,14 @@ public class EmployeeControllerIntegrationTest {
         assertEquals(employee.getId(), updatedEmployee.getId());
     }
 
-    private ResponseEntity<List<Employee>> getListResponseEntity(RestTemplate restTemplate) {
+    private ResponseEntity<List<EmployeeDto>> getListResponseEntity(RestTemplate restTemplate) {
         return restTemplate.exchange(
                 ROOT + GET_BY_ID + ALL,
                 HttpMethod.GET,
                 null,
-                new ParameterizedTypeReference<List<Employee>>() {
+                new ParameterizedTypeReference<List<EmployeeDto>>() {
                 }
+
         );
     }
 

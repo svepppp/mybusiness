@@ -1,6 +1,7 @@
 package ex1.mb.service.impl;
 
 import ex1.mb.dao.EmployeeDao;
+import ex1.mb.dto.EmployeeDto;
 import ex1.mb.entity.Employee;
 import ex1.mb.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,19 +15,22 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private EmployeeDao employeeDao;
 
+    @Autowired
+    private EmployeeDto employeeDto;
+
     @Override
     public Employee addEmployee(Employee employee) {
         return employeeDao.add(employee);
     }
 
     @Override
-    public Employee getEmployeeById(long id) {
-        return employeeDao.getById(id);
+    public EmployeeDto getEmployeeDtoById(long id) {
+        return employeeDto.getEmployeeDto(employeeDao.getById(id));
     }
 
     @Override
-    public List<Employee> getAllEmployees() {
-        return employeeDao.getAll();
+    public List<EmployeeDto> getAllEmployees() {
+        return employeeDto.getEmployeeDtoList(employeeDao.getAll());
     }
 
     @Override
@@ -35,7 +39,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee deleteEmployee(long id) {
-        return employeeDao.delete(getEmployeeById(id));
+    public EmployeeDto deleteEmployee(long id) {
+        return  employeeDto.getEmployeeDto(employeeDao.delete(employeeDao.getById(id)));
     }
 }

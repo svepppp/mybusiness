@@ -1,5 +1,6 @@
 package ex1.mb.controller;
 
+import ex1.mb.dto.EmployeeDto;
 import ex1.mb.entity.Employee;
 import ex1.mb.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,13 +25,13 @@ public class EmployeeController {
 
     @ResponseBody
     @RequestMapping(value = "/get/{id}", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
-    public Employee getEmployeeById(@PathVariable(value = "id") long id) {
-        return employeeService.getEmployeeById(id);
+    public EmployeeDto getEmployeeById(@PathVariable(value = "id") long id) {
+        return employeeService.getEmployeeDtoById(id);
     }
 
     @ResponseBody
     @RequestMapping(value = "/get/all", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
-    public List<Employee> getAllEmployees() {
+    public List<EmployeeDto> getAllEmployees() {
         return employeeService.getAllEmployees();
     }
 
@@ -42,7 +43,7 @@ public class EmployeeController {
 
     @ResponseBody
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE, produces = "application/json;charset=utf-8")
-    public Employee deleteEmployee(@PathVariable(value = "id") long id) {
+    public EmployeeDto deleteEmployee(@PathVariable(value = "id") long id) {
         return employeeService.deleteEmployee(id);
     }
 }

@@ -1,5 +1,6 @@
 package ex1.mb.service;
 
+import ex1.mb.dto.EmployeeDto;
 import ex1.mb.entity.Employee;
 
 import java.util.List;
@@ -20,14 +21,14 @@ public interface EmployeeService {
      * @param id - employee's id
      * @return employee by id
      */
-    Employee getEmployeeById(long id);
+    EmployeeDto getEmployeeDtoById(long id);
 
     /**
      * method for getting all employees
      *
      * @return all employees
      */
-    List<Employee> getAllEmployees();
+    List<EmployeeDto> getAllEmployees();
 
     /**
      * method for update employee
@@ -43,6 +44,6 @@ public interface EmployeeService {
      * @param id - employee's id for delete
      * @return deleted employee
      */
-    Employee deleteEmployee(long id);
+    EmployeeDto deleteEmployee(long id);
 }
 
