@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Моя первая Web страничка</title>
+    <link href="image/mb.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
 <p> Hello my ${name}</p>

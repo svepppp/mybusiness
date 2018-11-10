@@ -22,8 +22,6 @@ import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 public class AppConfig {
     @Autowired
     private Environment environment;
-
-
     /*  @Bean
       public Message message(){
           return  new Message("Bean from annonation");

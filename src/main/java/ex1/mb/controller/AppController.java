@@ -84,5 +84,4 @@ public class AppController {
         model.addAttribute("encodePassword", new BCryptPasswordEncoder().encode(password));
         return "password";
     }
-
 }
