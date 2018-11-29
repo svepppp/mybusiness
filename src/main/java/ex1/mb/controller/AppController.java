@@ -84,4 +84,10 @@ public class AppController {
         model.addAttribute("encodePassword", new BCryptPasswordEncoder().encode(password));
         return "password";
     }
+
+    // localhost:8080/sec  моя вторая страница
+    @RequestMapping("/sec")
+    public String getSecondPage() {
+        return "second";
+    }
 }

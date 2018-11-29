@@ -16,7 +16,7 @@ import javax.annotation.PreDestroy;
 public class MyServiceImpl implements MyService {
     @Override
     public String getName() {
-        return "bean from interface";
+        return "ОСЕНЬ!";
     }
 
     @PostConstruct
