@@ -85,9 +85,18 @@ public class AppController {
         return "password";
     }
 
-    // localhost:8080/sec  моя вторая страница
+    // localhost:8080/sec  моя вторая страничка
     @RequestMapping("/sec")
     public String getSecondPage() {
         return "second";
     }
+
+     // localhost:8080/my_flowers ссылка
+    @RequestMapping("/my_flowers")
+    public String getFlowers() {
+        return "my_flowers";
+    }
+
+
+
 }
