@@ -5,7 +5,7 @@
     <link href="image/mb.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
-<p> Привет , ${name}</p>
+<p> Привет , <a href="sec" target="_blank"> ${name}</a></p>
 <img src="image/autumn.jpg"/>
 </body>
 </html>
