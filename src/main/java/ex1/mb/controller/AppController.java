@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 
 @Controller
 public class AppController {
@@ -27,7 +28,6 @@ public class AppController {
     @Autowired
     //3. @Qualifier("main")
     private MyService myService;
-
 
     @Autowired
     private CreateTable createTable;
@@ -60,7 +60,7 @@ public class AppController {
 
     // localhost:8080/  наш Cat
     @RequestMapping("/catinfo")
-    public String getHomePage() {
+    public String getCatPage(HashMap<String, Object> model) {
      return "cat";
     }
 
