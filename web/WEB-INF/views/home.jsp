@@ -6,6 +6,8 @@
 </head>
 <body>
 <p> Привет , <a href="sec" target="_blank"> ${name}</a></p>
-<img src="image/autumn.jpg"/>
+<img src="image/autumn.jpg" title="Это картина Афремова">
+<br>
+<button disabled title=" кнопка"> Недоступна!</button>
 </body>
 </html>

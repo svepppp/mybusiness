@@ -29,6 +29,10 @@ public class AppController {
     //3. @Qualifier("main")
     private MyService myService;
 
+    public void setMyService(MyService myService) {
+        this.myService = myService;
+    }
+
     @Autowired
     private CreateTable createTable;
 
@@ -96,7 +100,4 @@ public class AppController {
     public String getFlowers() {
         return "my_flowers";
     }
-
-
-
 }

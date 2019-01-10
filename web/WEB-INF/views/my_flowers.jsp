@@ -17,5 +17,17 @@
 
     <a href="image/my3.jpg" target="_blank"> <img src="image/my31.jpg"  border="3"> </a>
 </div>
+
+<form  name="comment" action="mailto:maminyaschik@gmail.com" method=post>
+
+    Ваше имя:<br>
+    <input type=text name="firstname" value="введите ваше имя" size="40" maxlength="20"><br><br>
+
+    Ваш комментарий:<br>
+    <textarea rows=7 cols=40 name="comments">введите ваш комментарий</textarea><br><br>
+
+    <input type=submit value="ОК"> <input type=reset value="Отмена">
+
+</form>
 </body>
 </html> 

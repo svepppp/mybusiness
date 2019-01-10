@@ -13,7 +13,7 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 
 public class AppControllerIntegrationTest {
-   private MyService myService;
+    private MyService myService;
 
     @Test
     public void testGetFlowers() {
@@ -40,7 +40,9 @@ public class AppControllerIntegrationTest {
 
     @Test
     public void testGetHomePage() {
+        AppController appController = new AppController();
         myService = new MyServiceImpl();
+        appController.setMyService(myService);
         class ModelHome implements Model {
 
             @Override
@@ -80,13 +82,8 @@ public class AppControllerIntegrationTest {
         }
 
         Model model = new ModelHome();
-        String viewName = getHomePage(model);
+        String viewName = appController.getHomePage(model);
         assertEquals("home", viewName);
         assertEquals("ОСЕНЬ!", myService.getName());
-    }
-
-    private String getHomePage(Model model) {
-        model.addAttribute("name", myService.getName());
-        return "home";
     }
 }

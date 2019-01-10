@@ -22,10 +22,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         return viewResolver;
     }
 
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/views/css");
         registry.addResourceHandler("/image/**").addResourceLocations("/WEB-INF/views/image/");
     }
+
 }
