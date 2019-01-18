@@ -10,10 +10,10 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 public class AppControllerIntegrationTest {
-    private MyService myService;
 
     @Test
     public void testGetFlowers() {
@@ -40,6 +40,7 @@ public class AppControllerIntegrationTest {
 
     @Test
     public void testGetHomePage() {
+        MyService myService;
         AppController appController = new AppController();
         myService = new MyServiceImpl();
         appController.setMyService(myService);
@@ -85,5 +86,57 @@ public class AppControllerIntegrationTest {
         String viewName = appController.getHomePage(model);
         assertEquals("home", viewName);
         assertEquals("ОСЕНЬ!", myService.getName());
+    }
+
+    @Test
+    public void testGetName() {
+        AppController appController = new AppController();
+        class ModelHello implements Model {
+
+            @Override
+            public Model addAttribute(String s, Object o) {
+                return new ModelHello();
+            }
+
+            @Override
+            public Model addAttribute(Object o) {
+                return null;
+            }
+
+            @Override
+            public Model addAllAttributes(Collection<?> collection) {
+                return null;
+            }
+
+            @Override
+            public Model addAllAttributes(Map<String, ?> map) {
+                return new ModelHello();
+            }
+
+            @Override
+            public Model mergeAttributes(Map<String, ?> map) {
+                return null;
+            }
+
+            @Override
+            public boolean containsAttribute(String s) {
+                boolean b = false;
+                if (s.equals("Sveta")) {
+                    b = true;
+                }
+                return b;
+            }
+
+            @Override
+            public Map<String, Object> asMap() {
+                return null;
+            }
+        }
+
+        Model model = new ModelHello();
+        String sname = "Sveta";
+        String viewName = appController.getName(sname, model);
+        assertEquals("hello", viewName);
+        assertTrue(model.containsAttribute(sname));
     }
 }

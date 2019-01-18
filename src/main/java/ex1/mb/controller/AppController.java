@@ -69,9 +69,9 @@ public class AppController {
     }
 
     // localhost:8080/name/asdasd
-    @RequestMapping("/name/{name}")
-    public String getName(@PathVariable("name") String name, Model model) {
-        model.addAttribute("name", name);
+    @RequestMapping("/name/{sname}")
+    public String getName(@PathVariable("sname") String sname, Model model) {
+        model.addAttribute("name", sname);
         return "hello";
     }
 
