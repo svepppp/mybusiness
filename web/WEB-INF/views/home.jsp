@@ -1,16 +1,13 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Светлана
-  Date: 27.09.2018
-  Time: 0:19
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Мой первый Web сайт</title>
+    <title>Моя первая Web страничка</title>
+    <link href="image/mb.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
-<p> Hello my ${name}</p>
+<p> Привет , <a href="sec" target="_blank"> ${name}</a></p>
+<img src="image/autumn.jpg" title="Это картина Афремова">
+<br>
+<button disabled title=" кнопка"> Недоступна!</button>
 </body>
 </html>
