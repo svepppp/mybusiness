@@ -12,7 +12,7 @@ import javax.annotation.PreDestroy;
 //@Scope("request")
 //@Scope("session")
 //@Scope("global session")
-@Scope("application")
+//@Scope("application")
 public class MyServiceImpl implements MyService {
     @Override
     public String getName() {

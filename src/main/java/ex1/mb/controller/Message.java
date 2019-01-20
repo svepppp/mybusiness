@@ -3,7 +3,6 @@ package ex1.mb.controller;
 import org.springframework.stereotype.Component;
 
 @Component
-
 public class Message {
     private String name;
 

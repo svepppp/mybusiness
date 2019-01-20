@@ -8,6 +8,14 @@
 <p> Привет , <a href="sec" target="_blank"> ${name}</a></p>
 <img src="image/autumn.jpg" title="Это картина Афремова">
 <br>
-<button disabled title=" кнопка"> Недоступна!</button>
+    <a href="" target="window-1" >Главная</a>
+    <br>
+    <a href="sec" target="window-1" >Вторая страница</a>
+    <br>
+    <a href="my_flowers"  target="_top">Мои цветы</a>
+<br>
+<br>
+<button  title="Доступна!" onclick='open("frame", "displayWindow1",
+ "width=380, height=240, status=no, toolbar=no, menubar=no");' >Зарегистрироваться</button>
 </body>
 </html>
