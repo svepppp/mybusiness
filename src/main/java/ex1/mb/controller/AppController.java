@@ -100,4 +100,12 @@ public class AppController {
     public String getFlowers() {
         return "my_flowers";
     }
+
+     // localhost:8080/frame ссылка
+    @RequestMapping("/frame")
+    public String getFrame() {
+        return "frame";
+    }
+
+
 }
