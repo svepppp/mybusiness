@@ -65,10 +65,10 @@ public class AppController {
         return "cat";
     }
 
-    // localhost:8080/name/asdasd
-    @RequestMapping("/name/{sname}")
-    public String getName(@PathVariable("sname") String sname, Model model) {
-        model.addAttribute("name", sname);
+    // localhost:8080/name/{}
+    @RequestMapping("/name/{name}")
+    public String getName(@PathVariable("name") String name, Model model) {
+        model.addAttribute("name",name);
         return "hello";
     }
 
@@ -102,5 +102,12 @@ public class AppController {
     @RequestMapping("/frame")
     public String getFrame() {
         return "frame";
+    }
+
+
+    // localhost:8080/ userinfo
+    @RequestMapping("/userinfo")
+    public String getUserPage() {
+        return "userinfo";
     }
 }
