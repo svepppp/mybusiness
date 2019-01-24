@@ -20,24 +20,21 @@ import java.util.HashMap;
 
 @Controller
 public class AppController {
+    private static final Logger log = LoggerFactory.getLogger(AppController.class);
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
     @Autowired
     //1.  @Value("first spring bean!")
     private Message message;
-
     @Qualifier("myServiceImpl")
     @Autowired
     //3. @Qualifier("main")
     private MyService myService;
+    @Autowired
+    private CreateTable createTable;
 
     public void setMyService(MyService myService) {
         this.myService = myService;
     }
-
-    @Autowired
-    private CreateTable createTable;
-
-    private static final Logger log = LoggerFactory.getLogger(AppController.class);
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
    /*1. @Value("second spring bean!")
     private final Word word;
@@ -54,7 +51,7 @@ public class AppController {
           return "home";
       }*/
 
-// localhost:8080/
+    // localhost:8080/
     @RequestMapping("/")
     public String getHomePage(Model model) {
         log.info("Current time {}", dateFormat.format(new Date()));
@@ -65,7 +62,7 @@ public class AppController {
     // localhost:8080/  наш Cat
     @RequestMapping("/catinfo")
     public String getCatPage(HashMap<String, Object> model) {
-     return "cat";
+        return "cat";
     }
 
     // localhost:8080/name/asdasd
@@ -77,14 +74,14 @@ public class AppController {
 
     @Secured("ROLE_ADMIN")
     @RequestMapping("/create")
-       public String createTable(Model model) {
+    public String createTable(Model model) {
         model.addAttribute("status", createTable.getTableCreationStatus());
         return "create";
     }
 
-    @RequestMapping(value="/password/{password}",method = RequestMethod.GET)
-    public String getCryptPassword(@PathVariable("password") String password,Model model){
-        model.addAttribute("password",password);
+    @RequestMapping(value = "/password/{password}", method = RequestMethod.GET)
+    public String getCryptPassword(@PathVariable("password") String password, Model model) {
+        model.addAttribute("password", password);
         model.addAttribute("encodePassword", new BCryptPasswordEncoder().encode(password));
         return "password";
     }
@@ -95,17 +92,15 @@ public class AppController {
         return "second";
     }
 
-     // localhost:8080/my_flowers ссылка
+    // localhost:8080/my_flowers ссылка
     @RequestMapping("/my_flowers")
     public String getFlowers() {
         return "my_flowers";
     }
 
-     // localhost:8080/frame ссылка
+    // localhost:8080/frame ссылка
     @RequestMapping("/frame")
     public String getFrame() {
         return "frame";
     }
-
-
 }

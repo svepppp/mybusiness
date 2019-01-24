@@ -7,7 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Component
-//@Scope("sigleton")
+//@Scope("singleton")
 //@Scope("prototype")
 //@Scope("request")
 //@Scope("session")

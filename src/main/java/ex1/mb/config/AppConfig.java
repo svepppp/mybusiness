@@ -1,10 +1,13 @@
 package ex1.mb.config;
 
 import ex1.mb.dao.CatDao;
+import ex1.mb.dao.UserDao;
 import ex1.mb.dao.impl.CatDaoImpl;
 import ex1.mb.dao.impl.EmployeeDaoImpl;
+import ex1.mb.dao.impl.UserDaoImpl;
 import ex1.mb.entity.Cat;
 import ex1.mb.entity.Employee;
+import ex1.mb.entity.User;
 import ex1.mb.service.CreateTable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -22,6 +25,7 @@ import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 public class AppConfig {
     @Autowired
     private Environment environment;
+
     /*  @Bean
       public Message message(){
           return  new Message("Bean from annonation");
@@ -58,7 +62,6 @@ public class AppConfig {
         return jdbcDao;
     }
 
-
     @Bean
     public CatDao catDao() {
         return new CatDaoImpl(Cat.class);
@@ -68,5 +71,10 @@ public class AppConfig {
     @Bean
     public EmployeeDaoImpl employeeDao() {
         return new EmployeeDaoImpl(Employee.class);
+    }
+
+    @Bean
+    public UserDao userDao() {
+        return new UserDaoImpl(User.class);
     }
 }
