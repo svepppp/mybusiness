@@ -53,7 +53,7 @@ public class CatControllerIntegrationTest {
         for (Cat cat : cats) {
             assertNotNull(cat);
         }
-      }
+    }
 
     @Test
     public void deleteCat() {
@@ -136,15 +136,15 @@ public class CatControllerIntegrationTest {
         cat.setTime(LocalTime.of(10, 11, 34));
         cat.setYear(LocalDate.of(2012, 11, 12));
 
-        CatWoman liska=new CatWoman();
-        CatWoman riska=new CatWoman();
+        CatWoman liska = new CatWoman();
+        CatWoman riska = new CatWoman();
 
         liska.setName("Liska");
         riska.setName("Riska");
         liska.setDescription("funny");
         riska.setDescription("happy");
 
-        List<CatWoman> catWomenList=new ArrayList<>();
+        List<CatWoman> catWomenList = new ArrayList<>();
         catWomenList.add(liska);
         catWomenList.add(riska);
 
@@ -160,15 +160,15 @@ public class CatControllerIntegrationTest {
         cat.setTime(LocalTime.of(11, 12, 35));
         cat.setYear(LocalDate.of(2013, 3, 5));
 
-        CatWoman liska=new CatWoman();
-        CatWoman riska=new CatWoman();
+        CatWoman liska = new CatWoman();
+        CatWoman riska = new CatWoman();
 
         liska.setName("Liska");
         riska.setName("Riska");
         liska.setDescription("funny");
         riska.setDescription("happy");
 
-        List<CatWoman> catWomenList=new ArrayList<>();
+        List<CatWoman> catWomenList = new ArrayList<>();
         catWomenList.add(liska);
         catWomenList.add(riska);
 
