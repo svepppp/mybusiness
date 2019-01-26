@@ -27,8 +27,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //вводится страничка для введения пароля и тд
         //и переход на страничку
     }
-
-
     //  не использ в production,настройка авторизации
     // по пользователям, по ролям из памяти
 /*    @Override

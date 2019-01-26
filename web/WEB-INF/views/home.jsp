@@ -5,6 +5,20 @@
     <link href="image/mb.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
+
+Добр<script language="JavaScript">
+    <!--
+    date = new Date();
+    date = date.getHours();
+    if (date >= 0 && date < 6) {document.write("ой ночи")}
+    else {if (date >= 6 && date < 12) {document.write("ое утро")}
+    else {if (date >= 12 && date < 18) {document.write("ый день")}
+    else {document.write("ый вечер")}
+    }
+    }
+    //-->
+</script><noscript>о пожаловать</noscript>!
+
 <p> Привет , <a href="sec" target="_blank"> ${name}</a></p>
 <img src="image/autumn.jpg" title="Это картина Афремова">
 <br>
