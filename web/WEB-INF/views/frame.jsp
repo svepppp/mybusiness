@@ -14,9 +14,11 @@
 Регистрация
 <br>
 <br>
+Имя:<br>
+<input type=text name="name" value="имя" size="40" maxlength="20"><br><br>
 Логин:<br>
 <input type=text name="login" value="логин" size="40" maxlength="20"><br><br>
 Пароль:<br>
-<input type=text name="password" value="password" size="40" maxlength="20"><br><br>
+<input type=text name="password" value="пароль" size="40" maxlength="20"><br><br>
 </body>
 </html>

@@ -104,6 +104,12 @@ public class AppController {
         return "frame";
     }
 
+    // localhost:8080/frameexit ссылка
+    @RequestMapping("/frameexit")
+    public String getFrameExit() {
+        return "frameexit";
+    }
+
 
     // localhost:8080/ userinfo
     @RequestMapping("/userinfo")
