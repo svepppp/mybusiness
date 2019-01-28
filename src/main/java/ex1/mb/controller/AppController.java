@@ -61,7 +61,7 @@ public class AppController {
 
     // localhost:8080/  наш Cat
     @RequestMapping("/catinfo")
-    public String getCatPage(HashMap<String, Object> model) {
+    public String getCatPage() {
         return "cat";
     }
 
