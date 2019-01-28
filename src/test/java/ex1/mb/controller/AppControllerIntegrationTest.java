@@ -32,9 +32,7 @@ public class AppControllerIntegrationTest {
     @Test
     public void testGetCatPage() {
         AppController appController = new AppController();
-        HashMap<String, Object> model = new HashMap<String, Object>();
-
-        String viewName = appController.getCatPage(model);
+       String viewName = appController.getCatPage();
         assertEquals("cat", viewName);
     }
 
@@ -139,4 +137,25 @@ public class AppControllerIntegrationTest {
         assertEquals("hello", viewName);
         assertTrue(model.containsAttribute(sname));
     }
-}
+
+    @Test
+    public void testGetUserPage(){
+        AppController appController = new AppController();
+        String viewName = appController.getUserPage();
+        assertEquals("userinfo", viewName);
+    }
+
+    @Test
+    public void testGetFrameExit(){
+        AppController appController = new AppController();
+        String viewName = appController.getFrameExit();
+        assertEquals("frameexit", viewName);
+    }
+
+    @Test
+    public void testGetFrame(){
+        AppController appController = new AppController();
+        String viewName = appController.getFrame();
+        assertEquals("frame", viewName);
+    }
+    }
