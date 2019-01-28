@@ -146,10 +146,10 @@ public class AppControllerIntegrationTest {
     }
 
     @Test
-    public void testGetFrameExit(){
+    public void testGetEnter(){
         AppController appController = new AppController();
         String viewName = appController.getFrameExit();
-        assertEquals("frameexit", viewName);
+        assertEquals("enter", viewName);
     }
 
     @Test
