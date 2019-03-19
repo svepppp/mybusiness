@@ -11,7 +11,7 @@
 <a href="my_flowers"  target="_top">Мои цветы</a>
 <button  title="Доступна!" onclick='open("frame", "displayWindow1",
  "width=380, height=240, status=no, toolbar=no, menubar=no");' >Зарегистрироваться</button>
-<button  title="Доступна!" onclick='open("frameexit", "displayWindow1",
+<button  title="Доступна!" onclick='open("enter", "displayWindow1",
  "width=380, height=240, status=no, toolbar=no, menubar=no");' >Войти</button>
 </div>
 <div align="center">

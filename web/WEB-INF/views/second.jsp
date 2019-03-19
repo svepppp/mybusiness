@@ -11,6 +11,14 @@
     <title>Моя вторая страничка</title>
 </head>
 <body text="#FF33CC" bgcolor="#FFFF99" link="#449988" alink="#FF3300" vlink="#339999">
+<div align="right">
+    <a href="home" target="window-1" >Главная</a>
+    <a href="my_flowers"  target="_top">Мои цветы</a>
+    <button  title="Доступна!" onclick='open("frame", "displayWindow1",
+ "width=380, height=240, status=no, toolbar=no, menubar=no");' >Зарегистрироваться</button>
+    <button  title="Доступна!" onclick='open("enter", "displayWindow1",
+ "width=380, height=240, status=no, toolbar=no, menubar=no");' >Войти</button>
+</div>
 <div align="center">
      <H3>
         Здравствуйте,

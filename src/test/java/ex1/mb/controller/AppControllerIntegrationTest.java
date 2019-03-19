@@ -148,7 +148,7 @@ public class AppControllerIntegrationTest {
     @Test
     public void testGetEnter(){
         AppController appController = new AppController();
-        String viewName = appController.getFrameExit();
+        String viewName = appController.getEnter();
         assertEquals("enter", viewName);
     }
 
