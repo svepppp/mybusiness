@@ -116,4 +116,12 @@ public class AppController {
     public String getUserPage() {
         return "userinfo";
     }
+
+    // localhost:8080/private
+    @RequestMapping("/private")
+    public String getPrivate() {
+        return "private";
+    }
+
+
 }
