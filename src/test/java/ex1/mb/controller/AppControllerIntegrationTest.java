@@ -7,7 +7,6 @@ import org.junit.Test;
 import org.springframework.ui.Model;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
 
 import static junit.framework.TestCase.assertTrue;
@@ -32,7 +31,7 @@ public class AppControllerIntegrationTest {
     @Test
     public void testGetCatPage() {
         AppController appController = new AppController();
-       String viewName = appController.getCatPage();
+        String viewName = appController.getCatPage();
         assertEquals("cat", viewName);
     }
 
@@ -139,23 +138,32 @@ public class AppControllerIntegrationTest {
     }
 
     @Test
-    public void testGetUserPage(){
+    public void testGetUserPage() {
         AppController appController = new AppController();
         String viewName = appController.getUserPage();
         assertEquals("userinfo", viewName);
     }
 
     @Test
-    public void testGetEnter(){
+    public void testGetEnter() {
         AppController appController = new AppController();
-        String viewName = appController.getFrameExit();
+        String viewName = appController.getEnter();
         assertEquals("enter", viewName);
     }
 
     @Test
-    public void testGetFrame(){
+    public void testGetFrame() {
         AppController appController = new AppController();
         String viewName = appController.getFrame();
         assertEquals("frame", viewName);
     }
+
+    @Test
+    public void testGetPrivate() {
+        AppController appController = new AppController();
+        String viewName = appController.getPrivate();
+        assertEquals("private", viewName);
     }
+}
+
+

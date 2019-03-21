@@ -13,7 +13,7 @@
 Пароль:<br>
 <input type=text name="password" value="пароль" size="40" maxlength="20"><br><br>
 <br>
-<a href="sec" target="window-1" ><button type="button" >OK</button></a>
+<a href="private" target="window-1" ><button type="button" >OK</button></a>
 
 
 </body>
