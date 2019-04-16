@@ -6,7 +6,6 @@
 </head>
 <body  text="#FF33CC" bgcolor="#FFFF99">
 <div align="right">
-<a href="" target="window-1" >Главная</a>
 <a href="sec" target="window-1" >Вторая страничка</a>
 <a href="my_flowers"  target="_top">Мои цветы</a>
 <button  title="Доступна!" onclick='open("frame", "displayWindow1",
@@ -31,6 +30,6 @@
     </h3>
 </div>
 <p> Привет , <a href="sec" target="_blank"> ${name}</a></p>
-<img src="image/autumn.jpg" title="Это картина А.Афремова">
+<img src="image/autumn.jpg" title="Это картина Л.Афремова">
 </body>
 </html>
