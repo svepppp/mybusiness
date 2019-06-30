@@ -4,6 +4,14 @@
        <title>Мои цветы </title>
 </head>
 <body text="#FF33CC" bgcolor="#FFFF99">
+<div align="right">
+    <a href="home" target="window-1" >Главная</a>
+    <a href="sec" target="window-1" >Вторая страничка</a>
+    <button  title="Доступна!" onclick='open("frame", "displayWindow1",
+ "width=380, height=240, status=no, toolbar=no, menubar=no");' >Зарегистрироваться</button>
+    <button  title="Доступна!" onclick='open("enter", "displayWindow1",
+ "width=380, height=240, status=no, toolbar=no, menubar=no");' >Войти</button>
+</div>
 <div align="center">
     <H3>
         Здравствуйте,
