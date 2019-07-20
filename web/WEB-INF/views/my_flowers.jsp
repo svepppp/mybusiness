@@ -21,7 +21,8 @@
     <a href="image/my1.gif" target="_blank"> <img src="image/my11.gif"  border="3"
                                                   bordercolor="#CC0000"></a>
     <a href="image/my2.gif" target="_blank"> <img src="image/my21.gif"  border="3" ></a>
-    <a href="image/my3.jpg" target="_blank"> <img src="image/my31.jpg"  border="3"> </a>
+    <a href="image/my3.jpg" target="_blank"> <img src="image/my31.jpg"  border="3">
+    </a> <a href="image/my4.jpg" target="_blank"> <img src="image/my41.jpg"  border="3"> </a>
 </div>
 <form  name="comment" action="mailto:maminyaschik@gmail.com" method=post>
 
