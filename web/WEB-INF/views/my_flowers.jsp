@@ -28,6 +28,15 @@
     <a href="image/my7.jpg" target="_blank"> <img src="image/my71.jpg"  border="3"></a>
     <a href="image/my8.jpg" target="_blank"> <img src="image/my81.jpg"  border="3"></a>
     <a href="image/my9.jpg" target="_blank"> <img src="image/my91.jpg"  border="3"> </a>
+    <a href="image/x1.jpg" target="_blank"> <img src="image/x11.jpg"  border="3"> </a>
+    <a href="image/x2.jpg" target="_blank"> <img src="image/x21.jpg"  border="3"> </a>
+    <a href="image/x8.jpg" target="_blank"> <img src="image/x81.jpg"  border="3"> </a>
+    <a href="image/x4.jpg" target="_blank"> <img src="image/x41.jpg"  border="3"> </a>
+    <a href="image/x5.jpg" target="_blank"> <img src="image/x51.jpg"  border="3"> </a>
+    <a href="image/x6.jpg" target="_blank"> <img src="image/x61.jpg"  border="3"> </a>
+    <a href="image/x3.jpg" target="_blank"> <img src="image/x31.jpg"  border="3"> </a>
+    <a href="image/x7.jpg" target="_blank"> <img src="image/x71.jpg"  border="3"> </a>
+
 </div>
 <form  name="comment" action="mailto:maminyaschik@gmail.com" method=post>
 
